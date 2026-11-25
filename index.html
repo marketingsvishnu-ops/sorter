@@ -1,369 +1,357 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="MOTION HOUSE — Modern Fitness Club">
-<title>MOTION HOUSE | Fitness Club</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Demo</title>
 
 <style>
-:root {
-  --bg:#f7f8f6;
-  --white:#fff;
-  --dark:#171a20;
-  --muted:#747b84;
-  --blue:#3659e8;
-  --lime:#dfff78;
-  --border:#e7e9e6;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--dark)}
-a{text-decoration:none;color:inherit}
-.container{width:min(1160px,90%);margin:auto}
-h1,h2,h3,.logo{font-family:Manrope,sans-serif}
-.btn{display:inline-block;background:var(--blue);color:white;padding:15px 23px;border-radius:8px;font-size:13px;font-weight:700;transition:.25s}
-.btn:hover{background:#2445ce;transform:translateY(-2px)}
-.btn-outline{background:transparent;color:var(--dark);border:1px solid var(--border)}
-.btn-outline:hover{background:var(--dark);color:white}
 
-/* NAVIGATION */
-header{height:76px;position:sticky;top:0;background:rgba(247,248,246,.94);backdrop-filter:blur(14px);z-index:100;border-bottom:1px solid var(--border)}
-nav{height:100%;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:23px;font-weight:800;letter-spacing:-2px}
-.logo span{color:var(--blue)}
-.nav-links{display:flex;align-items:center;gap:30px;font-size:13px;font-weight:600}
-.nav-links a:hover{color:var(--blue)}
-.menu-btn{display:none;background:none;border:0;font-size:26px;cursor:pointer}
-
-/* HERO */
-.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:55px;padding:90px 0}
-.tag{color:var(--blue);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
-.hero h1{font-size:clamp(55px,7vw,92px);line-height:.98;letter-spacing:-6px;margin:20px 0}
-.hero h1 span{color:var(--blue)}
-.hero p{color:var(--muted);font-size:16px;line-height:1.8;max-width:480px;margin-bottom:28px}
-.hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-.hero-art{height:460px;border-radius:24px;background:#dfe5ff;position:relative;overflow:hidden;display:grid;place-items:center}
-.hero-art:before{content:"";width:330px;height:330px;background:var(--blue);border-radius:50%;position:absolute}
-.hero-art:after{content:"";width:210px;height:210px;border:25px solid var(--lime);border-radius:50%;position:absolute}
-.hero-shape{width:110px;height:110px;background:var(--dark);transform:rotate(45deg);z-index:1}
-.art-caption{position:absolute;bottom:25px;left:28px;right:28px;z-index:2;color:white;display:flex;justify-content:space-between;font-size:11px;letter-spacing:1px}
-
-/* HIGHLIGHTS */
-.highlights{background:var(--dark);color:white;padding:25px 0}
-.highlight-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.highlight-row p{color:#c2c7d0;font-size:12px;letter-spacing:1px}
-.highlight-row strong{font:800 23px Manrope;color:var(--lime)}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:40px 0}
-.stat{background:white;border:1px solid var(--border);padding:24px;border-radius:14px}
-.stat strong{font:800 32px Manrope}
-.stat p{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:1px;margin-top:5px}
-
-/* SECTIONS */
-section.content{padding:85px 0}
-.section-heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:35px}
-.section-heading h2{font-size:clamp(38px,5vw,58px);letter-spacing:-3px;line-height:1.05;margin-top:12px}
-.section-heading>p{max-width:370px;color:var(--muted);font-size:14px;line-height:1.8}
-
-/* PROGRAMS */
-.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.program{background:white;border:1px solid var(--border);border-radius:17px;overflow:hidden;transition:.25s}
-.program:hover{transform:translateY(-5px);box-shadow:0 18px 45px #171a2010}
-.program-art{height:190px;display:grid;place-items:center;background:#e9edff}
-.program:nth-child(2) .program-art{background:#edf3e1}
-.program:nth-child(3) .program-art{background:#eceeed}
-.shape{height:100px;width:100px;border-radius:50%;background:var(--blue);position:relative}
-.shape:after{content:"";position:absolute;inset:20px -25px;border:12px solid white;border-radius:50%;transform:rotate(-35deg)}
-.program:nth-child(2) .shape{background:var(--dark);border-radius:8px;transform:rotate(45deg)}
-.program:nth-child(3) .shape{width:0;height:0;border-radius:0;background:none;border-left:60px solid transparent;border-right:60px solid transparent;border-bottom:105px solid var(--lime)}
-.program:nth-child(3) .shape:after{display:none}
-.program-info{padding:25px}
-.program-info small{color:var(--blue);font-size:10px;font-weight:700;letter-spacing:1px}
-.program-info h3{font-size:23px;margin:10px 0}
-.program-info p{font-size:13px;line-height:1.8;color:var(--muted)}
-.program-info a{display:inline-block;margin-top:18px;color:var(--blue);font-size:12px;font-weight:700}
-
-/* ABOUT */
-.about{background:var(--dark);color:white;padding:85px 0}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:65px}
-.about-art{height:390px;background:var(--blue);border-radius:20px;display:grid;place-items:center;position:relative;overflow:hidden}
-.about-art:before{content:"";position:absolute;width:280px;height:280px;border:1px solid white;border-radius:50%}
-.about-art:after{content:"";position:absolute;width:190px;height:190px;border:23px solid var(--lime);transform:rotate(45deg)}
-.about-art span{z-index:1;font:800 46px/1 Manrope;text-align:center;letter-spacing:-3px}
-.about-copy h2{font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-4px;margin:15px 0}
-.about-copy p{color:#b7bdc7;font-size:14px;line-height:1.9;margin:22px 0}
-.perks{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:25px 0 30px;font-size:13px}
-.perks span{color:var(--lime);margin-right:8px}
-
-/* PRICING */
-.pricing{background:#f0f2ef}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.plan{background:white;padding:30px;border:1px solid var(--border);border-radius:17px}
-.plan.featured{border:2px solid var(--blue)}
-.plan h3{font-size:21px}
-.plan .price{font:800 38px Manrope;margin:25px 0 5px;letter-spacing:-2px}
-.plan .price small{font:400 12px "DM Sans";color:var(--muted);letter-spacing:0}
-.plan .caption{font-size:10px;color:var(--muted);letter-spacing:1px;font-weight:700}
-.plan ul{list-style:none;margin:22px 0;color:#555d67;font-size:13px;line-height:2.8}
-.plan li:before{content:"✓";color:var(--blue);margin-right:10px;font-weight:700}
-.plan .btn{width:100%;text-align:center}
-.popular{font-size:10px;color:var(--blue);font-weight:700}
-
-/* BMI */
-.bmi-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px}
-.bmi-copy h2{font-size:clamp(40px,5vw,60px);letter-spacing:-4px;line-height:1;margin:15px 0}
-.bmi-copy p{color:var(--muted);font-size:14px;line-height:1.8;margin-top:20px}
-.calculator{background:white;border:1px solid var(--border);padding:30px;border-radius:17px}
-.field{margin-bottom:18px}
-.field label{display:block;font-size:11px;font-weight:700;letter-spacing:1px;margin-bottom:9px}
-.field input{width:100%;padding:14px;border:1px solid var(--border);border-radius:8px;outline:none}
-.field input:focus{border-color:var(--blue)}
-.calculator button{width:100%;border:0}
-.result{display:none;background:var(--dark);color:white;padding:18px;border-radius:8px;margin-top:16px;line-height:1.7}
-.result strong{display:block;color:var(--lime);font:800 34px Manrope}
-
-/* CTA + FOOTER */
-.cta{background:var(--lime);padding:80px 20px;text-align:center}
-.cta h2{font-size:clamp(48px,8vw,85px);letter-spacing:-5px;line-height:1;margin:15px 0}
-.cta p{max-width:450px;margin:20px auto 25px;color:#424b32;font-size:14px;line-height:1.8}
-.cta .btn{background:var(--dark)}
-footer{background:var(--dark);color:white;padding:45px 0 20px}
-.footer-top{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;padding-bottom:30px}
-.footer-top p{color:#9da4af;font-size:10px;letter-spacing:1px;margin-top:8px}
-.footer-links{display:flex;gap:22px;flex-wrap:wrap;font-size:12px;color:#c6cbd2}
-.footer-bottom{border-top:1px solid #353a43;padding-top:20px;color:#9da4af;font-size:10px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-
-@media(max-width:900px){
- .hero{grid-template-columns:1fr;gap:35px;padding:65px 0}
- .about-grid,.bmi-grid{grid-template-columns:1fr;gap:40px}
- .programs,.plans{grid-template-columns:repeat(2,1fr)}
- .stats{grid-template-columns:repeat(2,1fr)}
+body{
+  background:#0f1020;
+  color:white;
 }
-@media(max-width:620px){
- .menu-btn{display:block}
- .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:var(--bg);padding:25px;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--border)}
- .nav-links.open{display:flex}
- .hero h1{font-size:58px;letter-spacing:-4px}
- .hero-art{height:310px}
- .hero-art:before{width:250px;height:250px}
- .hero-art:after{width:160px;height:160px;border-width:18px}
- .hero-shape{width:90px;height:90px}
- .stats{gap:10px}
- .stat{padding:17px}
- .stat strong{font-size:26px}
- section.content{padding:65px 0}
- .section-heading{display:block}
- .section-heading>p{margin-top:15px}
- .programs,.plans{grid-template-columns:1fr}
- .about-art{height:300px}
- .perks{grid-template-columns:1fr}
- .calculator{padding:22px}
- .highlight-row{justify-content:center;text-align:center}
+
+.container{
+  display:flex;
+  flex-direction:row-reverse;
+  min-height:100vh;
+}
+
+.demo{
+  width:70%;
+  background:#111;
+  position:relative;
+}
+
+iframe{
+  width:100%;
+  height:100vh;
+  border:none;
+}
+
+.right{
+  width:30%;
+  padding:30px 22px;
+  background:linear-gradient(180deg,#181a35,#0b0c18);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow-y:auto;
+}
+
+.box{
+  width:100%;
+  background:rgba(10,10,10,.88);
+  border:1px solid #FF8C2B;
+  border-radius:22px;
+  padding:26px 20px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(255,140,43,.28);
+}
+
+.badge{
+  display:inline-block;
+  background:#FF8C2B;
+  color:#fff;
+  padding:8px 18px;
+  border-radius:30px;
+  font-weight:800;
+  margin-bottom:16px;
+}
+
+h1{
+  font-size:34px;
+  color:#FF8C2B;
+  margin-bottom:10px;
+  text-transform:uppercase;
+}
+
+.sub{
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:22px;
+  color:#eee;
+}
+
+.features{
+  display:grid;
+  gap:12px;
+  margin:22px 0;
+}
+
+.feature{
+  background:linear-gradient(90deg,#1b1b1b,#2b2208);
+  border:1px solid rgba(255,170,70,.55);
+  padding:14px;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:700;
+}
+
+.feature span{
+  color:#FF8C2B;
+}
+
+/* Signup Button */
+.signup-btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:9px 16px;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  border-radius:9px;
+  font-size:15px;
+  font-weight:800;
+  border:1px solid #1ebe5d;
+  transition:.3s;
+}
+
+.signup-btn:hover{
+  background:#1ebe5d;
+  transform:scale(1.03);
+}
+
+.website-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-top:16px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.website-row a{
+  text-decoration:none;
+}
+
+.website{
+  color:#25D366;
+}
+
+.whatsapp-small{
+  color:#FF8C2B;
+}
+
+.cta{
+  display:block;
+  background:#25D366;
+  color:#fff;
+  text-decoration:none;
+  padding:17px;
+  border-radius:16px;
+  font-size:20px;
+  font-weight:900;
+  margin-top:22px;
+  box-shadow:0 8px 18px rgba(37,211,102,.35);
+  transition:.3s;
+}
+
+.cta:hover{
+  transform:scale(1.03);
+  background:#1ebe5d;
+}
+
+/* Floating Signup Button */
+.floating-signup{
+  position:absolute;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:50;
+  background:#FF8C2B;
+  color:#fff;
+  padding:12px 24px;
+  border-radius:8px;
+  font-size:18px;
+  font-weight:900;
+  border:3px solid #fff;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(255,140,43,0.6);
+  transition:.3s;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.floating-signup:hover{
+  transform:translateX(-50%) scale(1.08);
+  background:#E66A1A;
+  box-shadow:0 12px 25px rgba(255,140,43,0.8);
+}
+
+.trust{
+  margin-top:16px;
+  color:#ccc;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.footer{
+  margin-top:18px;
+  font-size:12px;
+  color:#aaa;
+  line-height:1.5;
+}
+
+@media(max-width:768px){
+  .container{
+    flex-direction:column-reverse;
+  }
+
+  .demo,
+  .right{
+    width:100%;
+  }
+
+  iframe{
+    height:500px;
+  }
+
+  .right{
+    padding:20px;
+  }
+}
+
+@media(max-width:480px){
+  h1{
+    font-size:28px;
+  }
+
+  .sub{
+    font-size:16px;
+  }
+
+  .feature{
+    font-size:16px;
+    padding:12px;
+  }
+
+  .signup-btn{
+    font-size:14px;
+    padding:8px 13px;
+  }
+
+  .cta{
+    font-size:18px;
+    padding:15px;
+  }
+
+  .website-row{
+    flex-direction:column;
+    gap:8px;
+  }
 }
 </style>
+
 </head>
 
 <body>
 
-<header>
-  <nav class="container">
-    <a href="#home" class="logo">MOTION<span>HOUSE.</span></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
-    <div class="nav-links" id="navLinks">
-      <a href="#programs">Programs</a>
-      <a href="#about">Our Club</a>
-      <a href="#membership">Membership</a>
-      <a href="#bmi">BMI Check</a>
-      <a href="#membership" class="btn">Join the House ↗</a>
+<div class="container">
+
+  <div class="demo">
+    <a href="https://icecric.com/clk?src=27705d9eff" target="_blank" rel="noopener noreferrer" class="floating-signup">🔥 CLICK ON SIGNUP 🔥</a>
+    <iframe src="https://icecric.com/clk?src=27705d9eff"></iframe>
+  </div>
+
+  <div class="right">
+    <div class="box">
+
+```
+  <div class="badge">AUTO WEBSITE</div>
+
+  <h1>Get Your ID Now</h1>
+
+  <p class="sub">
+    Fast auto website service with easy deposit support.
+    New users can start quickly through WhatsApp.
+  </p>
+
+  <div class="features">www.icecric.com
+
+    <div class="feature">
+      Minimum Deposit: <span>₹100 Only</span>
     </div>
-  </nav>
-</header>
 
-<main id="home">
-
-<section class="hero container">
-  <div>
-    <div class="tag">A new culture of movement · Est. 2026</div>
-    <h1>Move with<br><span>intention.</span></h1>
-    <p>A better kind of fitness club. Thoughtful spaces, expert coaching and a community that helps you feel stronger — in and out of the gym.</p>
-    <div class="hero-buttons">
-      <a href="#membership" class="btn">Explore Membership ↗</a>
-      <a href="#programs" class="btn btn-outline">Discover Programs</a>
+    <div class="feature">
+      Welcome Bonus: <span>10%</span>
     </div>
-  </div>
-  <div class="hero-art">
-    <div class="hero-shape"></div>
-    <div class="art-caption"><strong>01 / 03 · FIND YOUR RHYTHM</strong><span>STRENGTH · ENERGY · MOVEMENT</span></div>
-  </div>
-</section>
 
-<div class="highlights">
-  <div class="container highlight-row">
-    <p>Move better. Feel stronger. Live bigger.</p>
-    <strong>MOVE WITH INTENT.</strong>
+    <div class="feature">
+      Auto Website Support:
+      <a
+        class="signup-btn"
+        href="https://icecric.com/clk?src=27705d9eff"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Click on Signup
+      </a>
+    </div>
+
+    <div class="feature">
+      Quick Help:
+      <span>Deposit &amp; Withdrawal Support</span>
+    </div>
+
   </div>
+
+  <div class="website-row">
+
+    <a
+      class="website"
+      href="https://icecric.com/clk?src=27705d9eff"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      🌐 www.icecric.com
+    </a>
+
+    <a
+      class="whatsapp-small"
+      href="https://wa.me/447777364879"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      💬 WhatsApp
+    </a>
+
+  </div>
+
+  <a
+    class="cta"
+    href="https://wa.me/447777364879?text=Hello%20I%20want%20new%20icecric%20ID"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    📲 WhatsApp Now
+  </a>
+
+  <p class="trust">
+    ✅ Trusted icecric Support<br>
+    ✅ Simple Process<br>
+    ✅ Fast Response
+  </p>
+
+  <div class="footer">
+    18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+  </div>
+
 </div>
+```
 
-<section class="stats container">
-  <div class="stat"><strong>25+</strong><p>EXPERT COACHES</p></div>
-  <div class="stat"><strong>40+</strong><p>WEEKLY CLASSES</p></div>
-  <div class="stat"><strong>3K+</strong><p>ACTIVE MEMBERS</p></div>
-  <div class="stat"><strong>24/7</strong><p>ACTIVE MINDSET</p></div>
-</section>
-
-<section class="content container" id="programs">
-  <div class="section-heading">
-    <div><div class="tag">01 / Find your focus</div><h2>Training for<br>every kind of you.</h2></div>
-    <p>Build strength, improve endurance or move with more freedom. Find the training style that fits your goals.</p>
   </div>
-  <div class="programs">
-    <article class="program">
-      <div class="program-art"><div class="shape"></div></div>
-      <div class="program-info"><small>01 — STRENGTH</small><h3>Power Club</h3><p>Progressive resistance training to build strength, develop muscle and improve performance.</p><a href="#membership">Explore program ↗</a></div>
-    </article>
-    <article class="program">
-      <div class="program-art"><div class="shape"></div></div>
-      <div class="program-info"><small>02 — CONDITIONING</small><h3>Energy Room</h3><p>High-energy sessions that build stamina, endurance and cardiovascular fitness.</p><a href="#membership">Explore program ↗</a></div>
-    </article>
-    <article class="program">
-      <div class="program-art"><div class="shape"></div></div>
-      <div class="program-info"><small>03 — MOVEMENT</small><h3>Body Lab</h3><p>Mobility and functional training for better movement and a stronger everyday life.</p><a href="#membership">Explore program ↗</a></div>
-    </article>
-  </div>
-</section>
 
-<section class="about" id="about">
-  <div class="container about-grid">
-    <div class="about-art"><span>MOVE<br>YOUR<br>WORLD.</span></div>
-    <div class="about-copy">
-      <div class="tag" style="color:var(--lime)">02 / The Motion House approach</div>
-      <h2>More than<br>a workout.</h2>
-      <p>MOTION HOUSE brings together considered training spaces, passionate coaches and a welcoming community. Whether you're starting fresh or building on your progress, there's room to move at your pace.</p>
-      <div class="perks">
-        <div><span>✦</span>Personal coaching</div>
-        <div><span>✦</span>Premium equipment</div>
-        <div><span>✦</span>Group classes</div>
-        <div><span>✦</span>Recovery facilities</div>
-      </div>
-      <a href="#membership" class="btn">Experience the Club ↗</a>
-    </div>
-  </div>
-</section>
-
-<section class="content pricing" id="membership">
-  <div class="container">
-    <div class="section-heading">
-      <div><div class="tag">03 / Membership</div><h2>Your space.<br>Your pace.</h2></div>
-      <p>Simple membership options designed to support your routine. Choose the level that works for you.</p>
-    </div>
-    <div class="plans">
-      <article class="plan">
-        <h3>Core</h3><div class="price">AED 199<small> / month</small></div><div class="caption">THE ESSENTIALS</div>
-        <ul><li>Gym floor access</li><li>Premium equipment</li><li>Locker facilities</li><li>Fitness assessment</li></ul>
-        <a class="btn btn-outline" href="mailto:hello@motionhouse.com?subject=Core%20Membership">Choose Core ↗</a>
-      </article>
-      <article class="plan featured">
-        <div class="popular">MOST POPULAR</div>
-        <h3>Plus</h3><div class="price">AED 299<small> / month</small></div><div class="caption">THE FULL EXPERIENCE</div>
-        <ul><li>All Core benefits</li><li>Unlimited group classes</li><li>Monthly coach session</li><li>Recovery zone access</li></ul>
-        <a class="btn" href="mailto:hello@motionhouse.com?subject=Plus%20Membership">Choose Plus ↗</a>
-      </article>
-      <article class="plan">
-        <h3>All Access</h3><div class="price">AED 449<small> / month</small></div><div class="caption">THE COMPLETE PACKAGE</div>
-        <ul><li>All Plus benefits</li><li>Personal training session</li><li>Priority class booking</li><li>Nutrition consultation</li></ul>
-        <a class="btn btn-outline" href="mailto:hello@motionhouse.com?subject=All%20Access%20Membership">Choose All Access ↗</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="content container" id="bmi">
-  <div class="bmi-grid">
-    <div class="bmi-copy">
-      <div class="tag">04 / Your fitness snapshot</div>
-      <h2>Start with<br>where you are.</h2>
-      <p>Use this simple calculator to estimate your Body Mass Index (BMI). BMI is a general screening measure and does not provide a complete picture of health or fitness.</p>
-    </div>
-    <form class="calculator" id="bmiForm">
-      <div class="field"><label for="weight">WEIGHT (KG)</label><input id="weight" type="number" min="1" max="500" step=".1" placeholder="e.g. 75" required></div>
-      <div class="field"><label for="height">HEIGHT (CM)</label><input id="height" type="number" min="50" max="250" step=".1" placeholder="e.g. 175" required></div>
-      <button class="btn" type="submit">Calculate BMI ↗</button>
-      <div class="result" id="result" role="status" aria-live="polite"></div>
-    </form>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="tag">Your next chapter starts here</div>
-  <h2>Make your move.</h2>
-  <p>Find your rhythm, discover your strength and become part of the MOTION HOUSE community.</p>
-  <a href="mailto:hello@motionhouse.com?subject=Join%20Motion%20House" class="btn">Join the House ↗</a>
-</section>
-
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-top">
-      <div><a href="#home" class="logo">MOTION<span style="color:var(--lime)">HOUSE.</span></a><p>MOVE WITH INTENT. LIVE WITH ENERGY.</p></div>
-      <div class="footer-links">
-        <a href="#programs">Programs</a><a href="#about">Our Club</a><a href="#membership">Membership</a><a href="#bmi">BMI Calculator</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© <span id="year"></span> MOTION HOUSE. ALL RIGHTS RESERVED.</span>
-      <span>BUILT FOR MOVEMENT.</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
-menuBtn.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-  menuBtn.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
-});
-
-navLinks.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuBtn.textContent = "☰";
-  });
-});
-
-document.getElementById("bmiForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const weight = Number(document.getElementById("weight").value);
-  const height = Number(document.getElementById("height").value);
-  const result = document.getElementById("result");
-
-  if (!weight || !height || weight <= 0 || height < 50 || height > 250) {
-    result.style.display = "block";
-    result.textContent = "Please enter a valid height and weight.";
-    return;
-  }
-
-  const bmi = weight / ((height / 100) ** 2);
-  let category;
-
-  if (bmi < 18.5) category = "Underweight range";
-  else if (bmi < 25) category = "Healthy weight range";
-  else if (bmi < 30) category = "Overweight range";
-  else category = "Obesity range";
-
-  result.style.display = "block";
-  result.innerHTML = `<strong>${bmi.toFixed(1)}</strong>${category}<br><small>BMI is a screening tool, not a diagnosis.</small>`;
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+</div>
 
 </body>
 </html>
